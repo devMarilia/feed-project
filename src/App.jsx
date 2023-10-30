@@ -1,12 +1,11 @@
-import './global.css'
-function App() {
+import "./global.css";
+import { Header, Post } from "./components";
 
+export const App = () => {
   return (
     <>
-      Init project
- 
+      <Header />
+      <Post/>
     </>
-  )
-}
-
-export default App
+  );
+};
