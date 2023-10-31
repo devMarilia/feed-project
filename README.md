@@ -4,7 +4,7 @@
 </h4>
 
 <h1 align="center">
-  <img alt="Project Feed" title="#Project Feed" src="/home/devlia/Área de Trabalho/rocketseate/feed-project/src/assets/Feed-Project.png" />
+  <img alt="Project Feed" title="#Project Feed" src="src/assets/Feed-Project.png" />
 </h1>
 
 ### Features
