@@ -1,0 +1,40 @@
+{
+    "posts": [
+      {
+        "id": 1,
+        "author": {
+          "avatarUrl": "https://avatars.githubusercontent.com/u/41978544?v=4",
+          "name": "Marília Augusta",
+          "role": "Desenvolvedora front-end"
+        },
+        "content": [
+          { "type": "paragraph", "content": "Fala galera" },
+          {
+            "type": "paragraph",
+            "content": "Acabei de subir mais um projeto pro meu portfólio"
+          },
+          { "type": "link", "content": "marilia/fundamentos" }
+        ],
+        "publishAt": "2022-05-03T20:00:00Z"
+      },
+      {
+        "id": 2,
+        "author": {
+          "avatarUrl": "https://avatars.githubusercontent.com/u/41978544?v=4",
+          "name": "Marília Augusta",
+          "role": "Desenvolvedora front-end"
+        },
+        "content": [
+          { "type": "paragraph", "content": "Fala galera" },
+          {
+            "type": "paragraph",
+            "content":
+              "Acabei de subir mais um projeto no meu portfólio. É um projeto que fiz para aprimorar meus conhecimentos em Tailwind CSS"
+          },
+          { "type": "link", "content": "marilia/fundamentos" }
+        ],
+        "publishAt": "2022-10-03T20:00:00Z"
+      }
+    ]
+  }
+  

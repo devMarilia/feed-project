@@ -1,21 +1,24 @@
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import { Avatar } from "../Avatar";
 import { Comment } from "../Comment";
 import styles from "./Post.module.css";
-export const Post = () => {
+
+export const Post = ({author}) => {
+
+
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
           <Avatar
             className={styles.avatar}
-            src="https://avatars.githubusercontent.com/u/41978544?v=4"
+            src={author.avatarUrl}
            
           />
 
           <div className={styles.authorInfo}>
-            <strong>Marilia Augusta</strong>
-            <span>Web Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
 
@@ -31,11 +34,11 @@ export const Post = () => {
           no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀{" "}
         </p>
         <p>
-          👉 <a href="">jane.design/doctorcare</a>{" "}
+          👉 <a href="#">jane.design/doctorcare</a>{" "}
         </p>
         <p>
-          <a href="">#novoprojeto</a> <a href=""> #programação </a>{" "}
-          <a href="">#reactjs</a>
+          <a href="#">#novoprojeto</a> <a href="#"> #programação </a>{" "}
+          <a href="#">#reactjs</a>
         </p>
       </div>
 
@@ -58,7 +61,8 @@ export const Post = () => {
   );
 };
 
-// Post.propTypes = {
-//   author: PropTypes.string.isRequired,
-//   content: PropTypes.string.isRequired,
-// };
+Post.propTypes = {
+  author: PropTypes.string.isRequired,
+  avatarUrl: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+};
