@@ -6,18 +6,18 @@ import { Avatar } from "../Avatar";
 export const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
-      <img className={styles.cover} src={imageCover} />
+      <img className={styles.cover} src={imageCover} alt="imagem"/>
       <div className={styles.profile}>
         <Avatar
-          src="https://avatars.githubusercontent.com/u/41978544?v=4"
+          src="https://avatars.githubusercontent.com/u/41978544?v=4" alt="Banner image"
         />
 
         <strong>Marilia Augusta</strong>
         <span>Desenvolvedora Frontend</span>
       </div>
       <footer>
-        <a>
-          <PencilLine color="#00875f" weight="light" size={24} />
+        <a href="#">
+          <PencilLine  color="#fff" weight="light" size={24} />
           Editar seu perfil
         </a>
       </footer>

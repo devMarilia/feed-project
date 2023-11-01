@@ -4,6 +4,10 @@ import styles from "./Avatar.module.css";
 
 export const Avatar = ({hasBorder = true, src}) => {
 
+  if (src.startsWith('bul')) {
+    console.log('render')
+  }
+
   return (
     <img
       className={hasBorder ? styles.avatarWithBorder : styles.avatar}
@@ -14,5 +18,5 @@ export const Avatar = ({hasBorder = true, src}) => {
 };
 Avatar.propTypes = {
   src: PropTypes.string.isRequired,
-  hasBorder: PropTypes.bool,
+  hasBorder: PropTypes.string,
 };

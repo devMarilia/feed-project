@@ -1,8 +1,28 @@
 import "./global.css";
 import styles from "./App.module.css";
+import postsData from "./store/postdata.json";
 import { Header, Post, Sidebar } from "./components";
+import { useEffect, useState } from "react";
 
 export const App = () => {
+
+  const [cachedPosts, setCachedPosts] = useState([]);
+console.log(cachedPosts)
+
+  useEffect(() => {
+    // Tente buscar os dados do localStorage
+    const cachedData = localStorage.getItem('cachedPosts');
+
+    if (cachedData) {
+      // Se os dados estiverem em cache, use-os
+      setCachedPosts(JSON.parse(cachedData));
+    } else {
+      // Caso contrário, use os dados do JSON e armazene em cache
+      setCachedPosts(postsData);
+      localStorage.setItem('cachedPosts', JSON.stringify(postsData));
+    }
+  }, []);
+  const { posts } = postsData;
   return (
     <div>
       <Header />
@@ -11,14 +31,14 @@ export const App = () => {
           <Sidebar />
         </aside>
         <main>
-          <Post
-            author="Dev Lia"
-            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo perferendis autem a nam sunt adipisci voluptas voluptatum officiis iusto sint, tenetur alias, placeat eligendi debitis dignissimos laborum recusandae ipsam at."
-          />
-          <Post
-            author="Dev Lia"
-            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo perferendis autem a nam sunt adipisci voluptas voluptatum officiis iusto sint, tenetur alias, placeat eligendi debitis dignissimos laborum recusandae ipsam at."
-          />
+          {posts.map(post => (
+            <Post
+              key={post.id}
+              author={post.author}
+              content={post.content}
+              publishAt={post.publishAt}
+            />
+          ))}
         </main>
       </div>
     </div>
