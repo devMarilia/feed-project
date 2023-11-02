@@ -37,3 +37,9 @@ button {
   font-weight: 400;
   font-size: 1rem;
 }
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url('Roboto.woff2') format('woff2');
+  font-display: swap; 
+}
