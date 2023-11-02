@@ -4,7 +4,7 @@ import { format, formatDistanceToNow } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { Avatar } from "../Avatar";
 import { Comment } from "../Comment";
-import Loading from "../Loading"; // Importe o componente Loading a partir do caminho correto
+import {Loading} from "../Loading"; 
 import styles from "./Post.module.css";
 
 export const Post = ({ author, publishAt, content }) => {
