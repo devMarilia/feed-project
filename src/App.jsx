@@ -36,7 +36,7 @@ console.log(cachedPosts)
               key={post.id}
               author={post.author}
               content={post.content}
-              publishAt={post.publishAt}
+              publishAt={new Date(post.publishAt)}
             />
           ))}
         </main>

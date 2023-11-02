@@ -8,12 +8,12 @@
           "role": "Desenvolvedora front-end"
         },
         "content": [
-          { "type": "paragraph", "content": "Fala galera" },
+          { "type": "paragraph", "content": "Fala galera 👏" },
           {
             "type": "paragraph",
             "content": "Acabei de subir mais um projeto pro meu portfólio"
           },
-          { "type": "link", "content": "marilia/fundamentos" }
+          { "type": "link", "content": "#marilia #fundamentos" }
         ],
         "publishAt": "2022-05-03T20:00:00Z"
       },

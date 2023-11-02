@@ -2,16 +2,16 @@ import { ThumbsUp, Trash } from "@phosphor-icons/react";
 import styles from "./Comment.module.css";
 import { Avatar } from "../Avatar";
 
-export const Comment = () => {
+export const Comment = ({content}) => {
   return (
     <div className={styles.comment}>
-      <Avatar hasBorder={false} src='https://avatars.githubusercontent.com/u/80182753?v=4'/>
+      <Avatar hasBorder={false} src='https://pps.whatsapp.net/v/t61.24694-24/375038716_1743533279410650_6598154535214622109_n.jpg?ccb=11-4&oh=01_AdQISbnSjIwFfoZ7pwKoVAzsyQ5WCNt4mtSEYZRjyob7NA&oe=654A68DC&_nc_sid=000000&_nc_cat=103'/>
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong>Pedro Henrique</strong>
+              <strong>Matheus</strong>
               <time
                 title="06 de Junho de 2022 às 15h30"
                 dateTime="2022-06-06 15:33:00"
@@ -25,7 +25,7 @@ export const Comment = () => {
             </button>
           </header>
 
-          <p>Muito bom Devon, parabéns!! 👏👏</p>
+          <p>{content} </p>
         </div>
         <footer>
           <button>
