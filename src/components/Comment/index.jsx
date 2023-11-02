@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { ThumbsUp, Trash } from "@phosphor-icons/react";
 import styles from "./Comment.module.css";
 import { Avatar } from "../Avatar";
@@ -35,4 +36,9 @@ export const Comment = ({content}) => {
       </div>
     </div>
   );
+};
+
+Comment.propTypes = {
+  content: PropTypes.string.isRequired,
+ 
 };

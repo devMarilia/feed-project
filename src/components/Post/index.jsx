@@ -56,12 +56,12 @@ export const Post = ({ author, publishAt, content }) => {
       </header>
 
       <div className={styles.content}>
-        {content.map((line, index) => {
+        {content.map((line) => {
           if (line.type === "paragraph") {
-            return <p key={index}>{line.content}</p>;
+            return <p key={line.content}>{line.content}</p>;
           } else if (line.type === "link") {
             return (
-              <p key={index}>
+              <p key={line.content}>
                 <a href={line.content}>{line.content}</a>
               </p>
             );
@@ -86,8 +86,8 @@ export const Post = ({ author, publishAt, content }) => {
       </form>
 
       <div className={styles.commentList}>
-        {comments.map((comment, index) => (
-          <Comment key={index} content={comment} />
+        {comments.map(comment => (
+          <Comment key={comment} content={comment} />
         ))}
       </div>
     </article>
@@ -101,5 +101,5 @@ Post.propTypes = {
     role: PropTypes.string.isRequired,
   }).isRequired,
   publishAt: PropTypes.instanceOf(Date).isRequired,
-  content: PropTypes.string.isRequired,
+  content: PropTypes.array.isRequired,
 };
