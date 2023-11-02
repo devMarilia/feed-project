@@ -4,9 +4,9 @@ import styles from "./Avatar.module.css";
 
 export const Avatar = ({hasBorder = true, src}) => {
 
-  if (src.startsWith('bul')) {
-    console.log('render')
-  }
+  // if (src.startsWith('bul')) {
+  //   console.log('render')
+  // }
 
   return (
     <img
@@ -18,5 +18,5 @@ export const Avatar = ({hasBorder = true, src}) => {
 };
 Avatar.propTypes = {
   src: PropTypes.string.isRequired,
-  hasBorder: PropTypes.string,
+  hasBorder: PropTypes.bool, // This should be PropTypes.bool for a boolean prop.
 };
