@@ -1,20 +1,17 @@
 import PropTypes from "prop-types";
-import * as React from 'react'
+import * as React from "react";
 import { format, formatDistanceToNow } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { Avatar } from "../Avatar";
 import { Comment } from "../Comment";
 import styles from "./Post.module.css";
 
-// const comments = 
+// const comments =
 
 export const Post = ({ author, publishAt, content }) => {
+  const [comments, setComments] = React.useState(["Gostei do post...👏👏"]);
 
-  const [comments, setComments] = React.useState([
-    "Gostei do post...👏👏"
-  ])
-
-  const [newCommentText, setNewCommentText] = React.useState('')
+  const [newCommentText, setNewCommentText] = React.useState("");
 
   const publishedDateFormatted = format(publishAt, "dd LLLL 'às' HH:mm'h'", {
     locale: ptBR,
@@ -27,16 +24,26 @@ export const Post = ({ author, publishAt, content }) => {
 
   function handleCreateNewComment(event) {
     event.preventDefault();
-    setComments([...comments, newCommentText])
+    setComments([...comments, newCommentText]);
 
-    setNewCommentText('')
+    setNewCommentText("");
   }
 
   function handleNewCommitChange(event) {
-    setNewCommentText(event.target.value)
+    setNewCommentText(event.target.value);
   }
 
+  const deleteComment = (commentToDelete) => {
+    const commentsWithoutDeleteOne = comments.filter((comment) => {
+      return comment !== commentToDelete;
+    });
+    setComments(commentsWithoutDeleteOne);
+  };
 
+  const handleNewCommentInvalid = (event) => {
+    event.target.setCustonValid("");
+    setNewCommentText(event.target.value);
+  };
 
   return (
     <article className={styles.post}>
@@ -74,20 +81,26 @@ export const Post = ({ author, publishAt, content }) => {
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
         <strong>Deixe seu comentário</strong>
 
-        <textarea 
-          name='comment' 
-          placeholder="Deixe seu comentário" 
+        <textarea
+          name="comment"
+          placeholder="Deixe seu comentário"
           onChange={handleNewCommitChange}
           value={newCommentText}
+          onInvalid={handleNewCommentInvalid}
+          required
         />
         <footer>
-          <button type="submit">Comentar</button>
+          {newCommentText.length > 0 && <button type="submit">Comentar</button>}
         </footer>
       </form>
 
       <div className={styles.commentList}>
-        {comments.map(comment => (
-          <Comment key={comment} content={comment} />
+        {comments.map((comment) => (
+          <Comment
+            key={comment}
+            content={comment}
+            onDeleteComment={deleteComment}
+          />
         ))}
       </div>
     </article>

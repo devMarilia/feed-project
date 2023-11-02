@@ -3,7 +3,12 @@ import { ThumbsUp, Trash } from "@phosphor-icons/react";
 import styles from "./Comment.module.css";
 import { Avatar } from "../Avatar";
 
-export const Comment = ({content}) => {
+export const Comment = ({content, onDeleteComment}) => {
+
+  const handleDeleteComment = () => {
+    onDeleteComment(content)
+  }
+
   return (
     <div className={styles.comment}>
       <Avatar hasBorder={false} src='https://pps.whatsapp.net/v/t61.24694-24/375038716_1743533279410650_6598154535214622109_n.jpg?ccb=11-4&oh=01_AdQISbnSjIwFfoZ7pwKoVAzsyQ5WCNt4mtSEYZRjyob7NA&oe=654A68DC&_nc_sid=000000&_nc_cat=103'/>
@@ -21,7 +26,7 @@ export const Comment = ({content}) => {
               </time>
             </div>
 
-            <button title="Deletar comentário">
+            <button onClick={handleDeleteComment} title="Deletar comentário">
               <Trash size={24} />
             </button>
           </header>
@@ -40,5 +45,5 @@ export const Comment = ({content}) => {
 
 Comment.propTypes = {
   content: PropTypes.string.isRequired,
- 
+  onDeleteComment: PropTypes.func.isRequired
 };
