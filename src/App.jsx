@@ -1,28 +1,31 @@
-import "./global.css";
-import styles from "./App.module.css";
-import postsData from "./store/postdata.json";
-import { Header, Post, Sidebar } from "./components";
-import { useEffect, useState } from "react";
+import * as React from 'react';
+import './global.css';
+import styles from './App.module.css';
+import postsData from './store/postdata.json';
+import { Header, Post, Sidebar, Loading } from './components';
 
 export const App = () => {
+  const [cachedPosts, setCachedPosts] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
-  const [cachedPosts, setCachedPosts] = useState([]);
-console.log(cachedPosts)
-
-  useEffect(() => {
-    // Tente buscar os dados do localStorage
+  React.useEffect(() => {
     const cachedData = localStorage.getItem('cachedPosts');
 
     if (cachedData) {
-      // Se os dados estiverem em cache, use-os
       setCachedPosts(JSON.parse(cachedData));
     } else {
-      // Caso contrário, use os dados do JSON e armazene em cache
       setCachedPosts(postsData);
       localStorage.setItem('cachedPosts', JSON.stringify(postsData));
     }
+
+    // Simular um atraso de 2 segundos antes de ocultar o Loading
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   }, []);
-  const { posts } = postsData;
+
+  const { posts } = cachedPosts;
+
   return (
     <div>
       <Header />
@@ -31,14 +34,18 @@ console.log(cachedPosts)
           <Sidebar />
         </aside>
         <main>
-          {posts.map(post => (
-            <Post
-              key={post.id}
-              author={post.author}
-              content={post.content}
-              publishAt={new Date(post.publishAt)}
-            />
-          ))}
+          {loading ? (
+            <Loading />
+          ) : (
+            posts.map(post => (
+              <Post
+                key={post.id}
+                author={post.author}
+                content={post.content}
+                publishAt={new Date(post.publishAt)}
+              />
+            ))
+          )}
         </main>
       </div>
     </div>
