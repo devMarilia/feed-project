@@ -41,7 +41,7 @@ export const Post = ({ author, publishAt, content }) => {
   };
 
   const handleNewCommentInvalid = (event) => {
-    event.target.setCustonValid("");
+    event.target.setCustomValidity("");
     setNewCommentText(event.target.value);
   };
 

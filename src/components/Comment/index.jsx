@@ -1,23 +1,32 @@
+import * as React from "react";
 import PropTypes from "prop-types";
 import { ThumbsUp, Trash } from "@phosphor-icons/react";
 import styles from "./Comment.module.css";
 import { Avatar } from "../Avatar";
 
-export const Comment = ({content, onDeleteComment}) => {
+export const Comment = ({ content, onDeleteComment }) => {
+  const [likeCount, setLikeCount] = React.useState(0)
 
   const handleDeleteComment = () => {
     onDeleteComment(content)
-  }
+  };
+
+  const handleLikeClick = () => {
+    setLikeCount((stateLikeCount) => stateLikeCount + 1);
+  };
 
   return (
     <div className={styles.comment}>
-      <Avatar hasBorder={false} src='https://pps.whatsapp.net/v/t61.24694-24/375038716_1743533279410650_6598154535214622109_n.jpg?ccb=11-4&oh=01_AdQISbnSjIwFfoZ7pwKoVAzsyQ5WCNt4mtSEYZRjyob7NA&oe=654A68DC&_nc_sid=000000&_nc_cat=103'/>
+      <Avatar
+        hasBorder={false}
+        src="https://photos.enjoei.com.br/brechodarih/576x500/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8xOTIwMTIvZjMxNmI5YjdmOTA0Yzg1MDAzNDViZjU0OGQ0ZGUzYWEuanBn"
+      />
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong>Matheus</strong>
+              <strong>Anna Julia</strong>
               <time
                 title="06 de Junho de 2022 às 15h30"
                 dateTime="2022-06-06 15:33:00"
@@ -34,9 +43,9 @@ export const Comment = ({content, onDeleteComment}) => {
           <p>{content} </p>
         </div>
         <footer>
-          <button>
-            <ThumbsUp /> Aplaudir <span>03</span>
-          </button>
+        <button onClick={handleLikeClick}>
+        <ThumbsUp /> Aplaudir <span>{likeCount}</span>
+      </button>
         </footer>
       </div>
     </div>
@@ -45,5 +54,5 @@ export const Comment = ({content, onDeleteComment}) => {
 
 Comment.propTypes = {
   content: PropTypes.string.isRequired,
-  onDeleteComment: PropTypes.func.isRequired
+  onDeleteComment: PropTypes.func.isRequired,
 };
