@@ -1,10 +1,12 @@
 # React + Vite
 <h4 align="center"> 
-	🚧  Project Feed 🚀 Under construction...  🚧
+	🚧  Project Feed 🚀  🚧
 </h4>
 
+[Project](https://feed-project-vite.netlify.app/) 
+
 <h1 align="center">
-  <img alt="Project Feed" title="#Project Feed" src="src/assets/Feed-Project.png" />
+  <img alt="Project Feed" title="#Project Feed" src="src/assets/Capa (2).png" />
 </h1>
 
 ### Features
