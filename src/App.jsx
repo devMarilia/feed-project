@@ -18,7 +18,6 @@ export const App = () => {
       localStorage.setItem('cachedPosts', JSON.stringify(postsData));
     }
 
-    // Simular um atraso de 2 segundos antes de ocultar o Loading
     setTimeout(() => {
       setLoading(false);
     }, 2000);
