@@ -1,0 +1,72 @@
+.container {
+    background: var(--gray-800);
+    border-radius: 8px;
+    padding: 2.5rem;  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inputContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  strong {
+    color: var(--gray-100);
+    font-size: 1.25rem;
+  }
+  
+  .createButton {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: 0;
+    background: var(--green-500);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.1s;
+    margin-right: 1rem;
+  }
+  
+  .createButton:hover {
+    background: var(--green-300);
+  }
+  
+  .cancelButton {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--gray-600);
+    background: transparent;
+    color: var(--gray-300);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.1s, color 0.1s;
+  }
+  
+  .cancelButton:hover {
+    background: var(--gray-600);
+    color: var(--gray-100);
+  }
+  
+  .createButton:hover {
+    background: var(--green-300);
+  }
+  
+  .textarea {
+    width: 100%;
+    background: var(--gray-900);
+    border: 0;
+    resize: none;
+    height: 8rem;
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--gray-100);
+    line-height: 1.4;
+    margin-top: 1rem;
+  }
+  
+  .buttonContainer {
+    margin-top: 1rem;
+  }
+  

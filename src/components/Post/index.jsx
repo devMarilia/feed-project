@@ -53,7 +53,7 @@ export const Post = ({ author, publishAt, content }) => {
   return (
     <article className={styles.post}>
       {loading ? (
-        <Loading /> // Exibe o Loading enquanto o conteúdo está sendo carregado
+        <Loading />
       ) : (
         <>
           <header>
