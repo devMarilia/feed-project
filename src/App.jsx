@@ -10,20 +10,26 @@ export const App = () => {
   const [posts, setPosts] = React.useState([]);
   const [newPostText, setNewPostText] = React.useState("");
 
-  const handleCreateNewPost = (text) => {
-    if (text.trim() !== "") {
+  const handleCreateNewPost = () => {
+    if (newPostText.trim() !== "") {
       const newPost = {
         id: posts.length + 1,
         author: {
           avatarUrl: "https://avatars.githubusercontent.com/u/41978544?v=4",
-          name: "Marilia Augusta",
+          name: "Marília Augusta",
           role: "Desenvolvedora Front-End",
         },
-        content: [{ type: "paragraph", content: text }],
+        content: [
+          { type: "paragraph", content: newPostText },
+        ],
         publishAt: new Date().toISOString(),
       };
-
-      setPosts([...posts, newPost]);
+  
+      // Inserir o novo post no início da lista de posts
+      setPosts([newPost, ...posts]);
+  
+      // Limpar o campo de texto
+      setNewPostText("");
     }
   };
 
