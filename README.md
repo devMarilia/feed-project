@@ -9,14 +9,6 @@
   <img alt="Project Feed" title="#Project Feed" src="src/assets/capa01.png" />
 </h1>
 
-<div align="center">
-  <iframe src="https://giphy.com/embed/0dv0FUKaF6xV4lvMd7" width="480" height="272" frameborder="0" class="giphy-embed" allowfullscreen></iframe>
-  <p><a href="https://giphy.com/gifs/0dv0FUKaF6xV4lvMd7">via GIPHY</a></p>
-</div>
-
-
-
-
 
 ### Features
 
