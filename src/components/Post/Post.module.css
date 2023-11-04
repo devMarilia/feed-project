@@ -2,6 +2,7 @@
   background: var(--gray-800);
   border-radius: 8px;
   padding: 2.5rem;
+  margin-top: 1rem;
 }
 
 .post + .post {
