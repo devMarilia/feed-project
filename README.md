@@ -6,13 +6,14 @@
 [Project](https://feed-project-vite.netlify.app/) 
 
 <h1 align="center">
-  <img alt="Project Feed" title="#Project Feed" src="src/assets/Capa (2).png" />
+  <img alt="Project Feed" title="#Project Feed" src="src/assets/capa01.png" />
 </h1>
 
 ### Features
 
 - [x] Component Sidebar
 - [x] Component Post
+- [x] Component New Post
 - [x] Component Comment
 - [x] Component Avatar
 
@@ -20,6 +21,9 @@
 
 This component is responsible for creating the sidebar (or side menu) in a user interface. Typically, a sidebar contains links to different sections or features of the app.
 
+## Component New Post
+
+This component enables users to create and publish new posts in the application. It provides an input field for entering the post content and allows users to publish or cancel their posts.
 
 ## Component Post
 
@@ -73,3 +77,9 @@ $ yarn dev or npm run dev
 # The server will start on port 3333 - access it at http://localhost:4000/
 
 ```
+
+Eu estou aqui pedindo aos deuses que você contibua! 
+
+<p align="center"><img src="https://media.giphy.com/media/10kRzcdynCwUj6/giphy.gif"/></p>
+
+[<img src="https://img.shields.io/badge/medium-%2312100E.svg?&style=for-the-badge&logo=medium&logoColor=white" />](https://devmarilia-frontend.medium.com/)  [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />](https://www.linkedin.com/in/marília-augusta)
